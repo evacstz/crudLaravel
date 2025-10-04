@@ -46,7 +46,8 @@ class GameController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $game = Game::findOrFail($id);
+        return view("games.edit", compact("game"));
     }
 
     /**
@@ -54,7 +55,9 @@ class GameController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $game = Game::findOrFail($id);
+        $game->update($request->all());
+        return redirect()->route('games.index');
     }
 
     /**

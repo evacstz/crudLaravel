@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRIAR</title>
 </head>
 <body>
     <h1>CADASTRAR JOGO</h1>
 
-    <form action="{{route('games.store')}}" method="post">
+    <form action="{{ route('games.store') }}" method="post">
         @csrf
         <label for="name">Nome: </label>
         <input type="text" name="name">
